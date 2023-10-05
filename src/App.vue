@@ -1,9 +1,15 @@
 <script setup></script>
 
 <template>
-  <base-card></base-card>
-
-  <form-card></form-card>
+  <section class="grid-auto-flow">
+    <div class="cards-holder">
+      <back-card></back-card>
+      <front-card></front-card>
+    </div>
+    <div class="form-holder">
+      <form-payment></form-payment>
+    </div>
+  </section>
 </template>
 
-<style scoped></style>
+<style src="./style.css"></style>

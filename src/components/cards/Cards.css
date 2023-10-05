@@ -1,9 +1,80 @@
-span {
-  font-size: 10rem;
-  color: black;
+.card {
+  width: 100%;
+  max-width: 18rem;
+  position: relative;
 }
-h1 {
-  color: red;
-  font-size: 1rem;
-  text-decoration: underline;
+.card .card-bg {
+  width: 100%;
+  max-width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+.back-card {
+  z-index: 1;
+  position: relative;
+  margin-left: 53px;
+}
+.back-card--cvv {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  justify-self: self-end;
+  align-self: center;
+  margin: 0 2.5rem 0.25rem 0;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+.front-card {
+  margin: -4.25rem 0 -4.875rem 0;
+  z-index: 2;
+}
+
+.front-card > * {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.front-card .card-logo {
+  max-width: 3.5rem;
+  grid-row: 1/2;
+}
+.card-elements {
+  font-size: var(--fs-base-s);
+  font-weight: var(--fw-regular);
+  grid-row: 1/-1;
+  display: grid;
+  grid-auto-flow: row;
+
+  padding: 1.25rem;
+  z-index: 2;
+}
+.card-number {
+  align-self: center;
+  font-size: var(--fs-base);
+  letter-spacing: 2px;
+}
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  align-self: self-end;
+}
+.card-name {
+  text-transform: uppercase;
+}
+@media (min-width: 58.75rem) {
+  .card {
+    max-width: 23rem;
+    position: absolute;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.12))
+      drop-shadow(0 2px 2px rgba(0, 0, 0, 0.12))
+      drop-shadow(0 4px 4px rgba(0, 0, 0, 0.12))
+      drop-shadow(0 8px 8px rgba(0, 0, 0, 0.12))
+      drop-shadow(0 16px 16px rgba(0, 0, 0, 0.12));
+  }
+  .front-card {
+    top: 30%;
+    left: 55%;
+  }
+  .back-card {
+    top: 52%;
+    left: 60%;
+  }
 }

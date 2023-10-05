@@ -1,21 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: 'Space Grotesk';
+  line-height: 1.4;
+  font-weight: var(--fw-medium);
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+  --active-input-border: linear-gradient(
+      to right,
+      hsl(249, 99%, 64%) 0%,
+      hsl(278, 94%, 30%) 100%
+    )
+    border-box;
+  --input-errors: hsl(0, 100%, 66%);
+  --light-violet: hsl(270, 3%, 87%);
+  --dark-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+
+  --fs-base-s: calc(var(--fs-base) / 1.285);
+  --fs-base: 1.125rem;
+  --fs-base-l: calc(var(--fs-base) * 1.1);
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
 }
 
 a {
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   color: #646cff;
   text-decoration: inherit;
 }
@@ -33,28 +56,23 @@ a:hover {
 }
 
 body {
+  font-family: 'Space Grotesk';
+  line-height: 1.4;
+  background-color: var(--clr-white);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  padding: 0;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  background-color: var(--very-dark-violet);
+  border-radius: 0.5rem;
+  padding: 1em 1em;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
 button:hover {
   border-color: #646cff;
@@ -64,17 +82,32 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.card {
-  padding: 2em;
+.cards-holder {
+  background: url('assets/bg-main-mobile.png') center/cover no-repeat;
+  padding: 1.875rem 1rem 2.5rem 1rem;
+}
+.form-holder {
+  align-self: self-end;
+  margin: 4rem 0 2rem 0;
+  padding: 0 1rem 0 1rem;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.grid-auto-flow {
+  display: grid;
+  grid-auto-flow: row;
 }
-
+.grid-auto-column {
+  display: grid;
+  grid-auto-flow: column;
+}
+.stacked {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.hidden {
+  display: none;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -85,5 +118,24 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+@media (min-width: 58.75rem) {
+  .grid-auto-flow {
+    grid-auto-flow: unset;
+    grid-template-columns: 1fr 2fr;
+    min-height: 100vh;
+    height: 100%;
+  }
+  .cards-holder {
+    background: url('src/assets/bg-main-desktop.png') center/cover no-repeat;
+    display: grid;
+    place-content: center;
+    position: relative;
+  }
+  .form-holder {
+    max-width: 24rem;
+    place-self: center;
+    width: 100%;
   }
 }

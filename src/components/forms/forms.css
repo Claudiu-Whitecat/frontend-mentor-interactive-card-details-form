@@ -1,0 +1,68 @@
+input:active,
+input:focus {
+  background: linear-gradient(#fff, #fff) padding-box,
+    var(--active-input-border);
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+}
+fieldset {
+  border: unset;
+  margin: 0;
+  padding: 0;
+  max-width: 10rem;
+  gap: 0 0.5rem;
+}
+legend {
+  margin: 0 0 0.5rem 0;
+}
+.form-input {
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+  border-radius: 0.5rem;
+  padding: 0.75rem 0 0.75rem 1rem;
+  border: 1px solid var(--light-violet);
+}
+.form-input::placeholder {
+  font-size: var(--fs-base);
+  line-height: 1;
+  color: var(--light-violet);
+  padding: 0;
+  margin: 0;
+}
+.form-input--smaller {
+  max-width: 3.25rem;
+}
+.form-cc {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 1.25rem 0;
+}
+.field {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 0.5rem 0;
+}
+.form-cc--label {
+  font-family: 'Space Grotesk';
+  font-size: var(--fs-base-s);
+  font-weight: var(--fw-medium);
+  line-height: 1;
+  color: var(--very-dark-violet);
+  text-transform: uppercase;
+  letter-spacing: calc(10 * 0.01em);
+}
+.field-bigger {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 0 0.56rem;
+}
+@media (min-width: 58.75rem) {
+  .field-bigger {
+    justify-content: space-between;
+    gap: 0;
+  }
+  .form-input--smaller {
+    max-width: 4.25rem;
+  }
+}
